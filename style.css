@@ -47,7 +47,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   overflow-x: hidden;
-  animation: canvasShift 18s ease-in-out infinite alternate;
+  animation: canvasShift 24s ease-in-out infinite alternate;
 }
 
 .light body,
@@ -69,7 +69,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(8px);
   background: rgba(6, 7, 15, 0.7);
   border-bottom: 1px solid var(--border);
 }
@@ -97,8 +97,8 @@ nav .wrap {
 .brand img {
   width: 28px;
   height: 28px;
-  filter: brightness(9);
-  animation: logoPulse 3s ease-in-out infinite;
+  filter: none;
+  animation: logoPulse 3.5s ease-in-out infinite;
 }
 
 .brand .light-logo { display: none; }
@@ -241,8 +241,8 @@ h1 {
   position: absolute;
   width: 280px;
   height: 280px;
-  filter: blur(80px);
-  opacity: 0.4;
+  filter: blur(50px);
+  opacity: 0.32;
   z-index: 0;
   animation: float 16s ease-in-out infinite alternate;
 }
@@ -333,8 +333,8 @@ section {
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(142, 246, 194, 0.4);
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.35);
 }
 
 .card:hover::after { opacity: 1; }
@@ -471,11 +471,11 @@ footer {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at var(--x) var(--y), rgba(180, 208, 58, 0.08), transparent 18%);
-  opacity: 0.8;
-  transition: background 0.12s ease;
-  mix-blend-mode: screen;
-  z-index: 1;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(180, 208, 58, 0.06), transparent 18%);
+  opacity: 0.32;
+  transition: background 0.2s ease;
+  mix-blend-mode: normal;
+  z-index: 0;
 }
 
 .light .trail {
@@ -490,7 +490,7 @@ footer {
   height: 120px;
   background: linear-gradient(90deg, rgba(180, 208, 58, 0.18), rgba(58, 84, 208, 0.12), rgba(180, 208, 58, 0.18));
   filter: blur(32px);
-  animation: stripeSlide 16s linear infinite;
+  animation: stripeSlide 22s linear infinite;
   opacity: 0.35;
 }
 
@@ -511,6 +511,16 @@ footer {
   opacity: 0;
   transform: translateY(1.2em);
   animation: reveal 0.6s ease-out forwards;
+}
+
+/* Improve spacing and readability for split-word reveals */
+.reveal-text {
+  white-space: normal;
+  word-break: break-word;
+}
+.reveal-text span {
+  margin-right: 0.22em;
+  font-size: inherit;
 }
 
 @keyframes reveal {
@@ -534,7 +544,7 @@ footer {
 
 @keyframes canvasShift {
   from { background-position: 0 0, 0 0, 0 0; }
-  to { background-position: 6% 6%, -4% 8%, 0 0; }
+  to { background-position: 4% 4%, -3% 6%, 0 0; }
 }
 
 @keyframes stripeSlide {
@@ -543,6 +553,35 @@ footer {
 }
 
 @keyframes logoPulse {
-  0%, 100% { filter: brightness(9) drop-shadow(0 0 8px rgba(142, 246, 194, 0.5)); }
-  50% { filter: brightness(12) drop-shadow(0 0 14px rgba(125, 211, 255, 0.7)); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(142, 246, 194, 0.14)); }
+  50% { transform: scale(1.06); filter: drop-shadow(0 0 8px rgba(125, 211, 255, 0.18)); }
+}
+
+/* Prefer-reduced-motion: trims heavy animations for smoother feel */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  body {
+    animation: none;
+  }
+  .floating, .stripe, .trail, .hero-card, .card {
+    animation: none !important;
+  }
+}
+
+/* Toggle to quickly disable heavier visual animations (used for native scroll/dark mode)
+   Script will add/remove `no-anim` on the <body> to avoid repaints during scroll. */
+.no-anim {
+  animation: none !important;
+}
+.no-anim .floating,
+.no-anim .stripe,
+.no-anim .trail,
+.no-anim .hero-card,
+.no-anim .card {
+  animation: none !important;
+  transition: none !important;
 }

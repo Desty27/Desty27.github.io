@@ -7,179 +7,229 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="trail"></div>
-  <div class="floating one"></div>
-  <div class="floating two"></div>
-  <div class="stripe"></div>
+  <div id="smooth-container" data-scroll-container>
+    <div class="trail"></div>
+    <div class="floating one"></div>
+    <div class="floating two"></div>
+    <div class="stripe"></div>
 
-  <nav>
-    <div class="wrap">
-      <div class="brand">
-        <img class="dark-logo" src="assets/logo-dark.svg" alt="CornerStone logo dark">
-        <img class="light-logo" src="assets/logo-light.svg" alt="CornerStone logo light">
-        <span class="brand-name">CornerStone</span>
-      </div>
-      <div class="actions" style="gap:10px;">
-        <button class="pill mode-toggle" type="button">Light mode</button>
-        <a class="pill" href="#contact">Book a Strategy Call →</a>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <div class="wrap hero">
-      <div>
-        <div class="label">Digital Growth Studio</div>
-        <h1 class="reveal-text" style="font-size: clamp(44px, 8vw, 80px);">Get Found. Get Trust. Get Business.</h1>
-        <p class="lede">CornerStone builds revenue-ready digital systems—sites that load fast, funnels that capture leads, and review engines that turn happy customers into social proof.</p>
-        <div class="actions">
-          <a class="btn" href="pages/work.html">See what we build</a>
-          <a class="btn secondary" href="#process">How we deliver</a>
-        </div>
-      </div>
-
-      <div class="hero-card reveal">
-        <h3>Momentum Snapshot</h3>
-        <p style="color: var(--muted); margin:0;">A quick look at the wins we engineer for clients.</p>
-        <div class="ticker">
-          <div class="ticker-row"><span>Avg. lift in qualified leads</span><strong>+63%</strong></div>
-          <div class="ticker-row"><span>Review response automation</span><strong>12 min → 30 sec</strong></div>
-          <div class="ticker-row"><span>Site speed after rebuild</span><strong>4.8s → 1.2s</strong></div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section id="services" class="anchor-pad">
+    <nav data-scroll-section>
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="label">Services</div>
-            <h2>Everything modern brands need to look sharp and sell harder.</h2>
-          </div>
-          <a class="pill" href="pages/work.html#pages">Explore dummy builds</a>
-        </div>
-        <div class="cards">
-          <a class="card reveal" href="pages/websites.html">
-            <div class="chip">Website Building</div>
-            <h3>Conversion-first web builds</h3>
-            <p>Landing pages and full sites engineered for speed, SEO, and trust—built on clean code, bold type, and frictionless user journeys.</p>
-            <div class="stats">
-              <div class="stat"><strong>1.2s</strong><span>Avg load on mobile</span></div>
-              <div class="stat"><strong>90+</strong><span>Lighthouse score target</span></div>
-            </div>
-          </a>
-          <a class="card reveal" href="pages/leads.html">
-            <div class="chip">Lead Generation</div>
-            <h3>Predictable pipeline, on autopilot</h3>
-            <p>High-intent funnels, retargeting, and smart forms that sync to your CRM. Every click tracked, every dollar accountable.</p>
-            <div class="stats">
-              <div class="stat"><strong>3.4x</strong><span>ROAS average across campaigns</span></div>
-              <div class="stat"><strong>+52%</strong><span>Form completion uplift</span></div>
-            </div>
-          </a>
-          <a class="card reveal" href="pages/reviews.html">
-            <div class="chip">Review Boosting</div>
-            <h3>Reputation that compounds</h3>
-            <p>Automated review requests, response templates, and reporting so you capture every happy client and outshine competitors.</p>
-            <div class="stats">
-              <div class="stat"><strong>4.8★</strong><span>Avg. rating after 90 days</span></div>
-              <div class="stat"><strong>3x</strong><span>More reviews collected</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="anchor-pad">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="label">Process</div>
-            <h2>Lightning-fast delivery with enterprise calm.</h2>
-          </div>
-          <span class="pill">Two-week launch windows</span>
-        </div>
-        <div class="process">
-          <div class="step reveal" data-step="01">
-            <h3>Strategy Intensive</h3>
-            <p>We map audience, offers, and proof points into a sharp creative direction and funnel architecture.</p>
-          </div>
-          <div class="step reveal" data-step="02">
-            <h3>Design & Build</h3>
-            <p>UX, UI, and development sprinted together—design systems, responsive builds, analytics baked in.</p>
-          </div>
-          <div class="step reveal" data-step="03">
-            <h3>Launch & Scale</h3>
-            <p>Tracking, A/B tests, ad creative, and review automations rolled out with weekly performance loops.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof" class="anchor-pad">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="label">Proof</div>
-            <h2>We trade on outcomes, not hours.</h2>
-          </div>
-          <span class="pill">Ask about our guarantee</span>
-        </div>
-        <div class="cards">
-          <div class="card reveal">
-            <h3>Hospitality group</h3>
-            <p>New booking site + localized landing pages lifted direct reservations by 74% and cut OTA fees.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Healthcare practice</h3>
-            <p>Review automation raised rating from 4.1★ to 4.9★ in 60 days; inbound calls up 58%.</p>
-          </div>
-          <div class="card reveal">
-            <h3>B2B SaaS</h3>
-            <p>Retargeting and email drips dropped CAC by 32% while keeping MQL quality intact.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="anchor-pad">
-      <div class="wrap cta reveal">
-        <h3>Ready to build your digital foundation?</h3>
-        <p>Tell us your goal; we’ll reply with a tailored sprint plan within one business day.</p>
-        <div class="actions" style="justify-content:center;">
-          <a class="btn" href="mailto:hello@cornerstone.digital?subject=Project%20Inquiry">hello@cornerstone.digital</a>
-          <a class="btn secondary" href="#services">View services</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-grid">
-      <div>
         <div class="brand">
           <img class="dark-logo" src="assets/logo-dark.svg" alt="CornerStone logo dark">
           <img class="light-logo" src="assets/logo-light.svg" alt="CornerStone logo light">
           <span class="brand-name">CornerStone</span>
         </div>
-        <p style="margin:10px 0 0;">Digital marketing studio for brands that want momentum, not maintenance.</p>
+        <div class="site-menu" style="margin-left:18px;">
+          <a class="pill" href="#home" style="margin-right:8px;">Home</a>
+          <a class="pill" href="#services" style="margin-right:8px;">Services</a>
+          <a class="pill" href="#why" style="margin-right:8px;">Why Us</a>
+          <a class="pill" href="#contact">Contact</a>
+        </div>
+        <div class="actions" style="gap:10px;">
+          <button class="pill mode-toggle" type="button">Light mode</button>
+          <a class="pill" href="#contact">Book a Strategy Call →</a>
+        </div>
       </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="mailto:hello@cornerstone.digital">hello@cornerstone.digital</a><br>
-        <span>Based in the U.S. — available worldwide</span>
-      </div>
-      <div>
-        <h4>Links</h4>
-        <a href="#services">Services</a><br>
-        <a href="#process">Process</a><br>
-        <a href="#proof">Proof</a>
-      </div>
-    </div>
-  </footer>
+    </nav>
 
+    <header data-scroll-section>
+      <div class="wrap hero">
+        <div>
+          <div class="label">Digital Growth Studio</div>
+          <h1 class="reveal-text" style="font-size: clamp(44px, 8vw, 80px);">Get Found. Get Trust. Get Business.</h1>
+          <p class="lede">We help Indian businesses show up online, look trustworthy, and turn visitors into real calls, WhatsApp messages, and walk-ins.</p>
+          <div class="actions">
+            <a class="btn" href="pages/work.html">See what we build</a>
+            <a class="btn secondary" href="#process">How we deliver</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <h3>What you get fast</h3>
+          <p style="color: var(--muted); margin:0;">Simple outcomes without tech talk.</p>
+          <div class="ticker">
+            <div class="ticker-row"><span>Website that feels premium on phone</span><strong>Live in 24Hrs</strong></div>
+            <div class="ticker-row"><span>More enquiries from Google + social media</span><strong>Optimised SEO</strong></div>
+            <div class="ticker-row"><span>Reviews + reply automation</span><strong>Customer Engagement</strong></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main data-scroll-section>
+      <section id="services" class="anchor-pad">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="label">Services</div>
+              <h2>Built for Indian owners who want results without the hassle.</h2>
+            </div>
+            <a class="pill" href="pages/work.html#pages">Explore dummy builds</a>
+          </div>
+          <div class="cards">
+            <a class="card reveal" href="pages/websites.html">
+              <div class="chip">Instant Website</div>
+              <h3>Website in a Day</h3>
+              <p>We launch a clean, phone-first site fast so you start getting calls and customers immediately.</p>
+            </a>
+            <a class="card reveal" href="pages/leads.html">
+              <div class="chip">Google & Leads</div>
+              <h3>Get found locally</h3>
+              <p>We optimise your Maps listing and website so locals find you first and get directions or call.</p>
+            </a>
+            <a class="card reveal" href="pages/reviews.html">
+              <div class="chip">Reputation</div>
+              <h3>Reviews that build trust</h3>
+              <p>We help collect 5-star reviews and handle unhappy customers privately so your rating grows.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="anchor-pad">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="label">Process</div>
+              <h2>Simple, guided steps to launch.</h2>
+            </div>
+            <span class="pill">Two-week launch windows</span>
+          </div>
+          <div class="process">
+            <div class="step reveal" data-step="01">
+              <h3>Strategy Intensive</h3>
+              <p>We understand your business, city, and customers, then pick the quickest wins.</p>
+            </div>
+            <div class="step reveal" data-step="02">
+              <h3>Design & Build</h3>
+              <p>We write the words, design the look, and build pages that work great on mobile.</p>
+            </div>
+            <div class="step reveal" data-step="03">
+              <h3>Launch & Scale</h3>
+              <p>We connect Google, maps, and social, then keep an eye on calls and forms so you see results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="anchor-pad">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="label">Proof</div>
+              <h2>Proof from everyday businesses.</h2>
+            </div>
+            <span class="pill">Ask about our guarantee</span>
+          </div>
+          <div class="cards">
+            <div class="card reveal">
+              <h3>Hospitality group</h3>
+              <p>New booking site with clear offers brought more direct calls and fewer OTA commissions.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Healthcare practice</h3>
+              <p>Friendly review asks moved their Google rating up and filled appointment slots faster.</p>
+            </div>
+            <div class="card reveal">
+              <h3>B2B SaaS</h3>
+              <p>Simple retargeting and reminder emails kept leads warm and sales teams busy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="anchor-pad">
+        <div class="wrap cta reveal">
+          <h3>Ready to build your digital foundation?</h3>
+          <p>Tell us your goal; we’ll reply with a tailored sprint plan within one business day.</p>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn" href="mailto:contact@corner-stone.me?subject=Project%20Inquiry">contact@corner-stone.me</a>
+            <a class="btn secondary" href="#services">View services</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" class="anchor-pad">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="label">Services You Can Add</div>
+              <h2>Helpful add-ons that make a visible difference.</h2>
+            </div>
+            <span class="pill">Optional, high-impact</span>
+          </div>
+          <div class="cards">
+            <div class="card reveal">
+              <h3>Google Business & Reputation Management</h3>
+              <p>We make your Maps listing rank higher, collect 5‑star reviews publicly, and route complaints privately so your rating improves without drama.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Smart WhatsApp Chat & Lead Capture</h3>
+              <p>Add a "Chat on WhatsApp" button or an automated assistant that captures numbers and answers basic questions — so you don't lose lazy callers.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Peace of Mind — Monthly Care Package</h3>
+              <p>For a small monthly fee we host, update, secure and edit your site. Think of us as your remote IT team so your online presence never breaks.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Business Email Setup</h3>
+              <p>Professional email like info@yourbusiness.com that builds immediate trust with customers and suppliers.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Compliance & Privacy</h3>
+              <p>We add clear opt-in checkboxes and DPDP-friendly forms so your lead collection follows India's data rules and avoids legal headaches.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="anchor-pad">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="label">Why Us</div>
+              <h2>No tech jargon. Just results.</h2>
+            </div>
+            <span class="pill">Local focus, clear outcomes</span>
+          </div>
+          <div style="color:var(--muted);">
+            <p><strong>The 24/7 Salesperson:</strong> Your shop may close at night, but a website answers customers any time — showing your services, price, and opening hours even at 2 AM.</p>
+            <p><strong>The Digital Visiting Card:</strong> Most customers search online before they visit. A simple, professional website proves you are real and trustworthy.</p>
+            <p><strong>Own your presence:</strong> Facebook and Instagram can change the rules; a website is your owned spot on the internet you control.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer data-scroll-section>
+      <div class="wrap footer-grid">
+        <div>
+          <div class="brand">
+            <img class="dark-logo" src="assets/logo-dark.svg" alt="CornerStone logo dark">
+            <img class="light-logo" src="assets/logo-light.svg" alt="CornerStone logo light">
+            <span class="brand-name">CornerStone</span>
+          </div>
+          <p style="margin:10px 0 0;">Digital marketing studio for brands that want momentum, not maintenance.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:contact@corner-stone.me">contact@corner-stone.me</a><br>
+          <span>Based in the U.S. — available worldwide</span>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <a href="#services">Services</a><br>
+          <a href="#process">Process</a><br>
+          <a href="#proof">Proof</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
