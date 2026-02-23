@@ -20,18 +20,77 @@
           <img class="light-logo" src="assets/logo-light.svg" alt="CornerStone logo light">
           <span class="brand-name">CornerStone</span>
         </div>
+        <button class="mobile-hamburger" aria-label="Open menu" aria-expanded="false">
+          <svg width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M0 2h22M0 8h22M0 14h22" stroke-linecap="round" />
+          </svg>
+        </button>
         <div class="site-menu" style="margin-left:18px;">
-          <a class="pill" href="#home" style="margin-right:8px;">Home</a>
+          <a class="pill" href="pages/work.html" style="margin-right:8px;">Our Works</a>
           <a class="pill" href="#services" style="margin-right:8px;">Services</a>
           <a class="pill" href="#why" style="margin-right:8px;">Why Us</a>
-          <a class="pill" href="#contact">Contact</a>
         </div>
-        <div class="actions" style="gap:10px;">
-          <button class="pill mode-toggle" type="button">Light mode</button>
-          <a class="pill" href="#contact">Book a Strategy Call →</a>
+        <div class="actions" style="gap:10px; align-items:center;">
+          <button class="call-sign" aria-haspopup="dialog" title="Contact">📞 Contact</button>
+            <button class="pill mode-toggle" type="button" aria-pressed="false" aria-label="Toggle color mode" title="Toggle color mode">
+            
+            <!-- Sun icon (light mode) -->
+            <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+              <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <path d="M12 2v2"/>
+                <path d="M12 20v2"/>
+                <path d="M4.93 4.93l1.41 1.41"/>
+                <path d="M17.66 17.66l1.41 1.41"/>
+                <path d="M2 12h2"/>
+                <path d="M20 12h2"/>
+                <path d="M4.93 19.07l1.41-1.41"/>
+                <path d="M17.66 6.34l1.41-1.41"/>
+              </g>
+            </svg>
+            <!-- Moon icon (dark mode) -->
+            <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          
         </div>
       </div>
     </nav>
+
+    <!-- Mobile side menu overlay -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">✕</button>
+        <nav class="mobile-links">
+          <a href="pages/work.html">Our Works</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why Us</a>
+          <a href="pages/websites.html">Website in a Day</a>
+          <a href="pages/leads.html">Get found locally</a>
+          <a href="pages/reviews.html">Reputation</a>
+          <a href="pages/contact.html">Contact</a>
+        </nav>
+        <div class="mobile-menu-contact">
+          <a href="tel:+916370704148">+91 6370704148</a>
+          <a href="mailto:contact@corner-stone.me">contact@corner-stone.me</a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile hero line (visible on small screens only) -->
+    <div class="mobile-hero-line">Get Found. Get Trust. Get Business.</div>
+
+    <!-- Contact popup overlay -->
+    <div id="contact-popup-overlay" class="contact-popup-overlay" aria-hidden="true">
+      <div class="contact-popup" role="dialog" aria-modal="true" aria-labelledby="contact-popup-title">
+        <button id="contact-popup-close" class="close-btn" aria-label="Close">✕</button>
+        <h3 id="contact-popup-title">Contact CornerStone</h3>
+        <p><strong>Phone:</strong> <a href="tel:+916370704148">+91 6370704148</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contact@corner-stone.me">contact@corner-stone.me</a></p>
+        <p><a href="https://forms.gle/LvEvNb67DZYXDyLV6" target="_blank" rel="noopener">Contact us / Book via form</a></p>
+      </div>
+    </div>
 
     <header data-scroll-section>
       <div class="wrap hero">
@@ -65,7 +124,7 @@
               <div class="label">Services</div>
               <h2>Built for Indian owners who want results without the hassle.</h2>
             </div>
-            <a class="pill" href="pages/work.html#pages">Explore dummy builds</a>
+            <a class="pill" href="pages/work.html#pages">Explore live builds</a>
           </div>
           <div class="cards">
             <a class="card reveal" href="pages/websites.html">
@@ -112,30 +171,8 @@
           </div>
         </div>
       </section>
-
       <section id="proof" class="anchor-pad">
         <div class="wrap">
-          <div class="section-head">
-            <div>
-              <div class="label">Proof</div>
-              <h2>Proof from everyday businesses.</h2>
-            </div>
-            <span class="pill">Ask about our guarantee</span>
-          </div>
-          <div class="cards">
-            <div class="card reveal">
-              <h3>Hospitality group</h3>
-              <p>New booking site with clear offers brought more direct calls and fewer OTA commissions.</p>
-            </div>
-            <div class="card reveal">
-              <h3>Healthcare practice</h3>
-              <p>Friendly review asks moved their Google rating up and filled appointment slots faster.</p>
-            </div>
-            <div class="card reveal">
-              <h3>B2B SaaS</h3>
-              <p>Simple retargeting and reminder emails kept leads warm and sales teams busy.</p>
-            </div>
-          </div>
           <!-- Partner logos scrolling marquee -->
           <div class="partner-section section" aria-hidden="false">
             <div class="label">Partners</div>
@@ -164,6 +201,35 @@
               </div>
             </div>
           </div>
+          <div class="testimonials-section" style="margin-top:32px;">
+            <h3 style="margin-bottom:12px;">What our clients say</h3>
+            <div class="testimonials-grid">
+              <div class="testimonial">
+                <p class="quote">"Since our new website launch, table bookings have doubled. The site is smooth and mobile-friendly; our Google ratings improved and Maps views increased — customers keep coming!"</p>
+                <p class="meta"><span class="reviewer">— Ramesh Kumar</span><span class="business">, Ramesh's Dhaba (Restaurant)</span></p>
+              </div>
+              <div class="testimonial">
+                <p class="quote">"The new site feels fast and polished. We saw a spike in online reviews and more walk-ins from Maps — business up noticeably."</p>
+                <p class="meta"><span class="reviewer">— Sonia Mehra</span><span class="business">, Glow & Go (Beauty Salon)</span></p>
+              </div>
+              <div class="testimonial">
+                <p class="quote">"Website navigation is effortless. Our ratings climbed and Map clicks shot up — leads and conversions rose within weeks."</p>
+                <p class="meta"><span class="reviewer">— Amit Singh</span><span class="business">, TravelEase (Travel Agency)</span></p>
+              </div>
+              <div class="testimonial">
+                <p class="quote">"Beautiful, quick site — customers find us easily on Maps now and our footfall has increased. Ratings are looking much better."</p>
+                <p class="meta"><span class="reviewer">— Priya Verma</span><span class="business">, Priya's Boutique</span></p>
+              </div>
+              <div class="testimonial">
+                <p class="quote">"Site performance is fantastic. More people call us from the website and Maps, and our store ratings have improved."</p>
+                <p class="meta"><span class="reviewer">— Deepak Patel</span><span class="business">, Spark Electronics</span></p>
+              </div>
+              <div class="testimonial">
+                <p class="quote">"Smooth booking flow and clearer menus boosted orders. Map hits increased and new customers keep coming in."</p>
+                <p class="meta"><span class="reviewer">— Anita Rao</span><span class="business">, The Daily Grind (Café)</span></p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,6 +238,7 @@
           <h3>Ready to build your digital foundation?</h3>
           <p>Tell us your goal; we’ll reply with a tailored sprint plan within one business day.</p>
           <div class="actions" style="justify-content:center;">
+            <a class="btn" href="tel:+916370704148">+91 6370704148</a>
             <a class="btn" href="mailto:contact@corner-stone.me?subject=Project%20Inquiry">contact@corner-stone.me</a>
             <a class="btn secondary" href="#services">View services</a>
           </div>
@@ -238,12 +305,12 @@
             <img class="light-logo" src="assets/logo-light.svg" alt="CornerStone logo light">
             <span class="brand-name">CornerStone</span>
           </div>
-          <p style="margin:10px 0 0;">Digital marketing studio for brands that want momentum, not maintenance.</p>
+          <p style="margin:10px 0 0;">Digital marketing studio for brands that want momentum, not just maintenance.</p>
         </div>
         <div>
           <h4>Contact</h4>
           <a href="mailto:contact@corner-stone.me">contact@corner-stone.me</a><br>
-          <span>Based in the U.S. — available worldwide</span>
+          <span>+91 6370704148</span>
         </div>
         <div>
           <h4>Links</h4>
