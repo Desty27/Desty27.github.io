@@ -510,7 +510,8 @@ footer {
   gap: 16px;
 }
 
-.footer-grid h4 {
+.footer-grid h4,
+.footer-grid .footer-heading {
   margin: 0 0 10px;
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -979,5 +980,22 @@ footer {
      f i l l :   # f f f ; 
      w i d t h :   3 2 p x ; 
      h e i g h t :   3 2 p x ; 
- }  
+ } 
  
+ 
+/* SEO: footer-heading replaces h4 for valid heading hierarchy */
+.footer-grid .footer-heading {
+  margin: 0 0 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* SEO: op-title replaces h4 in the offer popup */
+.op-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 4px 0 8px;
+  color: var(--text);
+}
