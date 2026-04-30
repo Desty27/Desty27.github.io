@@ -89,6 +89,7 @@
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     .svc-card::before {
       content: '';
@@ -252,25 +253,47 @@
 
   <nav>
     <div class="wrap">
-
-        <div class="brand">
+        <a href="../index.html" class="brand" style="text-decoration:none;">
           <img class="dark-logo" src="../assets/favicon.svg" alt="CornerStone logo">
           <span class="brand-name">CornerStone</span>
-        </div>
-        <a class="pill" href="../index.html" style="margin-right:8px;">Home</a>
-        <a class="pill active" href="services.html" style="margin-right:8px; background:rgba(180,208,58,0.18); color:var(--primary);">Services</a>
-        <a class="pill" href="work.html" style="margin-right:8px;">Our Works</a>
-        <a class="pill" href="pricing.html" style="margin-right:8px;">Pricing</a>
-        <button class="pill mode-toggle" type="button" aria-pressed="false" aria-label="Toggle color mode" title="Toggle color mode">
-          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="call-sign" aria-haspopup="dialog" title="Contact">📞 Contact</button>
+        </a>
         <button class="mobile-hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+          <svg width="22" height="16" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M0 2h22M0 8h22M0 14h22" stroke-linecap="round" />
+          </svg>
         </button>
-      
-    </div>
+        <div class="site-menu" style="margin-left:18px;">
+          <a class="pill" href="work.html" style="margin-right:8px;">Our Works</a>
+          <a class="pill active" href="services.html" style="margin-right:8px; background:rgba(180,208,58,0.18); color:var(--primary);">Services</a>
+          <a class="pill" href="pricing.html" style="margin-right:8px;">Pricing</a>
+        </div>
+        <div class="actions" style="gap:10px; align-items:center; margin-left:auto;">
+          <button class="call-sign" aria-haspopup="dialog" title="Contact">📞 Contact</button>
+            <button class="pill mode-toggle" type="button" aria-pressed="false" aria-label="Toggle color mode" title="Toggle color mode">
+            
+            <!-- Sun icon (light mode) -->
+            <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+              <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <path d="M12 2v2"/>
+                <path d="M12 20v2"/>
+                <path d="M4.93 4.93l1.41 1.41"/>
+                <path d="M17.66 17.66l1.41 1.41"/>
+                <path d="M2 12h2"/>
+                <path d="M20 12h2"/>
+                <path d="M4.93 19.07l1.41-1.41"/>
+                <path d="M17.66 6.34l1.41-1.41"/>
+              </g>
+            </svg>
+            <!-- Moon icon (dark mode) -->
+            <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          
+        </div>
+      </div>
   </nav>
 
   <main>
@@ -296,7 +319,7 @@
 
       <div class="svc-grid">
         <!-- Website -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="website" data-action="navigate" data-href="websites.html">
           <span class="icon">🌐</span>
           <span class="badge badge-core">Foundation</span>
           <h3>Website Design &amp; Build</h3>
@@ -312,7 +335,7 @@
         </div>
 
         <!-- Local SEO -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="seo" data-action="navigate" data-href="leads.html">
           <span class="icon">📍</span>
           <span class="badge badge-core">Visibility</span>
           <h3>Local SEO &amp; Lead Generation</h3>
@@ -328,7 +351,7 @@
         </div>
 
         <!-- Reviews -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="reviews" data-action="navigate" data-href="reviews.html">
           <span class="icon">⭐</span>
           <span class="badge badge-core">Reputation</span>
           <h3>Review Management</h3>
@@ -353,7 +376,7 @@
 
       <div class="svc-grid">
         <!-- AI Chatbot -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="chatbot" data-action="whatsapp" data-message="Hi! I'm interested in your AI Chatbot service. Can you tell me more about how it works for my business?">
           <span class="icon">🤖</span>
           <span class="badge badge-ai">AI-Powered</span>
           <h3>AI Chatbot</h3>
@@ -369,7 +392,7 @@
         </div>
 
         <!-- Voice Agent -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="voice" data-action="whatsapp" data-message="Hi! I'm interested in your Voice AI Receptionist service. Can you tell me more and potentially set up a demo call?">
           <span class="icon">🎙️</span>
           <span class="badge badge-ai">AI-Powered</span>
           <h3>Voice AI Receptionist</h3>
@@ -394,7 +417,7 @@
 
       <div class="svc-grid">
         <!-- CRM/SRM -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="crm" data-action="whatsapp" data-message="Hi! I'm interested in your CRM & SRM Systems service. Can we discuss how you can build a system tailored to our business needs?">
           <span class="icon">🗂️</span>
           <span class="badge badge-custom">Custom Build</span>
           <h3>CRM &amp; SRM Systems</h3>
@@ -411,7 +434,7 @@
         </div>
 
         <!-- Contract / Retainer -->
-        <div class="svc-card reveal">
+        <div class="svc-card reveal" data-service="retainer" data-action="navigate" data-href="pricing.html">
           <span class="icon">🔄</span>
           <span class="badge badge-custom">Retainer</span>
           <h3>Ongoing Contract &amp; Updates</h3>
@@ -547,6 +570,31 @@
 
     // Start after 3s delay
     setTimeout(showNext, 3000);
+
+    /* ── Service card click handling ── */
+    const whatsappPhone = '916370704148';
+    const cards = document.querySelectorAll('.svc-card[data-action]');
+    
+    cards.forEach(card => {
+      const action = card.dataset.action;
+      const message = card.dataset.message;
+      const href = card.dataset.href;
+      
+      card.addEventListener('click', function(e) {
+        // Don't trigger if clicking on a link
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+          return;
+        }
+        
+        if (action === 'navigate' && href) {
+          window.location.href = href;
+        } else if (action === 'whatsapp' && message) {
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${encodedMessage}`;
+          window.open(whatsappUrl, '_blank');
+        }
+      });
+    });
   })();
   </script>
 </body>

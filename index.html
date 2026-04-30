@@ -229,6 +229,45 @@
         width: auto;
       }
     }
+    /* ── Floating testimonial popups ── */
+    .testi-float {
+      position: fixed;
+      bottom: 80px;
+      left: 24px;
+      z-index: 8888;
+      max-width: 320px;
+      background: linear-gradient(145deg, #0d1526, #111d2e);
+      border: 1px solid rgba(180,208,58,0.28);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+      transform: translateX(calc(-100% - 40px));
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .testi-float.show {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .testi-float .tf-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .testi-float .tf-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(180,208,58,0.4), rgba(58,84,208,0.3));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .testi-float .tf-name { font-size: 13px; font-weight: 700; }
+    .testi-float .tf-role { font-size: 11px; color: var(--muted); }
+    .testi-float .tf-stars { color: var(--primary); font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+    .testi-float .tf-quote { font-size: 13px; color: var(--muted); line-height: 1.6; font-style: italic; }
+    .testi-float .tf-close {
+      position: absolute; top: 10px; right: 12px;
+      background: rgba(255,255,255,0.07); border: none; border-radius: 50%;
+      width: 22px; height: 22px; cursor: pointer; color: var(--muted);
+      font-size: 12px; display: flex; align-items: center; justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -557,6 +596,20 @@
         </div>
       </div>
     </footer>
+
+    <!-- Floating testimonials -->
+    <div id="tf-popup" class="testi-float" role="status" aria-live="polite" aria-atomic="true">
+      <button class="tf-close" id="tf-close" aria-label="Dismiss">✕</button>
+      <div class="tf-top">
+        <div class="tf-avatar" id="tf-avatar">😊</div>
+        <div>
+          <div class="tf-name" id="tf-name">Loading…</div>
+          <div class="tf-role" id="tf-role"></div>
+        </div>
+      </div>
+      <div class="tf-stars" id="tf-stars">★★★★★</div>
+      <div class="tf-quote" id="tf-quote"></div>
+    </div>
   </div>
 
   <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -648,6 +701,49 @@
       /* Show on load (delay 2.2s so page settles) */
       showPopup();
     })();
+
+    /* ── Floating testimonials ── */
+    var testimonials = [
+      { emoji:'👩‍⚕️', name:'Dr. Priya Sharma', role:'Dermatology Clinic, Bhubaneswar', stars:'★★★★★', quote:'"CornerStone built our website and set up the AI chatbot. Patient enquiries doubled — without hiring extra staff."' },
+      { emoji:'📊', name:'Rahul Mehta', role:'CA Firm, Pune', stars:'★★★★★', quote:'"Their CRM is built exactly around how we manage clients. No more Excel sheets — everything is tracked and automated."' },
+      { emoji:'🏋️', name:'Ankit Verma', role:'Fitness Centre, Hyderabad', stars:'★★★★☆', quote:'"The Voice AI receptionist handles after-hours calls and books trial sessions. We haven\'t missed a lead since."' },
+      { emoji:'🏨', name:'Sunita Rao', role:'Boutique Hotel, Goa', stars:'★★★★★', quote:'"Review management brought us from 3.8 to 4.9 stars on Google. Bookings went up 40% in 3 months."' },
+      { emoji:'🏠', name:'Vikram Joshi', role:'Interior Designer, Mumbai', stars:'★★★★★', quote:'"The website looks incredible and ranks on Google Maps. Clients now find us — we stopped relying on referrals alone."' },
+      { emoji:'🦷', name:'Dr. Ramesh Patel', role:'Dental Clinic, Ahmedabad', stars:'★★★★★', quote:'"WhatsApp booking via the chatbot runs itself. I just check my schedule and see appointments already confirmed."' }
+    ];
+
+    var popup = document.getElementById('tf-popup');
+    var closeBtn = document.getElementById('tf-close');
+    var current = 0;
+    var dismissed = false;
+    var timer;
+
+    function showNext() {
+      if (dismissed) return;
+      var t = testimonials[current % testimonials.length];
+      document.getElementById('tf-avatar').textContent = t.emoji;
+      document.getElementById('tf-name').textContent = t.name;
+      document.getElementById('tf-role').textContent = t.role;
+      document.getElementById('tf-stars').textContent = t.stars;
+      document.getElementById('tf-quote').textContent = t.quote;
+      popup.classList.add('show');
+      current++;
+      timer = setTimeout(function() {
+        popup.classList.remove('show');
+        setTimeout(showNext, 3500);
+      }, 6000);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        dismissed = true;
+        clearTimeout(timer);
+        popup.classList.remove('show');
+      });
+    }
+
+    // Start after 3s delay
+    setTimeout(showNext, 3000);
   </script>
 </body>
 </html>
